@@ -34,7 +34,7 @@
 
 <h3 align="center"><code>// Daily Contributions</code></h3>
 <div align="center">
-  <img src="[https://raw.githubusercontent.com/Ramilo-Edric03/Ramilo-Edric03/output/dist/github-contribution-grid-snake.svg](https://raw.githubusercontent.com/Ramilo-Edric03/Ramilo-Edric03/refs/heads/main/dist/github-contribution-grid-snake.svg)" alt="Ramilo-Edric03's Snake Contributions" />
+  <img src="https://raw.githubusercontent.com/Ramilo-Edric03/Ramilo-Edric03/refs/heads/main/dist/github-contribution-grid-snake.svg" alt="Ramilo-Edric03's Snake Contributions" />
 </div>
 
 <br />
