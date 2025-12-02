@@ -1,0 +1,28 @@
+name: Generate Snake Animation
+
+on:
+  schedule:
+    # Runs at 1 AM UTC daily
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the code
+      - uses: actions/checkout@v4
+      # Step 2: Generate the snake animation
+      - uses: Platane/snk@v3
+        with:
+          github_user_name: Ramilo-Edric03
+          # Creates the file at Ramilo-Edric03/output/github-contribution-grid-snake.svg
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake.gif
+      # Step 3: Push the changes to the 'output' branch
+      - uses: EndBug/add-and-commit@v9
+        with:
+          branch: output
+          message: 'Generate GitHub snake contribution graph'
+          add: 'dist/github-contribution-grid-snake.svg'
