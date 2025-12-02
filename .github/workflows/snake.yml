@@ -12,21 +12,25 @@ jobs:
     steps:
       # Step 1: Checkout the code
       - uses: actions/checkout@v4
-      # Step 2: Generate the snake animation
+      
+      # Step 2: Generate the snake animation (Fix 1: Using 'args' for colors)
       - uses: Platane/snk@v3
         with:
           github_user_name: Ramilo-Edric03
-          # Creates the file at Ramilo-Edric03/output/github-contribution-grid-snake.svg
-          color_snake: '#58A6FF' # Snake color (light blue)
-          color_dots: '#21262D'  # Deep gray background for contribution cells
-          color_text: '#C9D1D9'  # Light gray for text
-          color_bg: '#0D1117'    # Very dark background color (GitHub Dark Default)
+          # Passing colors via 'args' which is compatible with the action
+          args: |
+            --palette-snake="#58A6FF" 
+            --palette-dots="#21262D" 
+            --palette-text="#C9D1D9"
+            --palette-bg="#0D1117"
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake.gif
-      # Step 3: Push the changes to the 'output' branch
+            
+      # Step 3: Push the changes (Fix 2: Using 'new_branch' for output branch)
       - uses: EndBug/add-and-commit@v9
         with:
-          branch: output
+          # 'new_branch' is the correct parameter for pushing to a specific branch
+          new_branch: output
           message: 'Generate GitHub snake contribution graph'
           add: 'dist/github-contribution-grid-snake.svg'
