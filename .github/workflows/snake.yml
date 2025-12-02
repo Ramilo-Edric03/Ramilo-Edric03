@@ -17,7 +17,10 @@ jobs:
         with:
           github_user_name: Ramilo-Edric03
           # Creates the file at Ramilo-Edric03/output/github-contribution-grid-snake.svg
-          palette: github-dark-snake
+          color_snake: '#58A6FF' # Snake color (light blue)
+          color_dots: '#21262D'  # Deep gray background for contribution cells
+          color_text: '#C9D1D9'  # Light gray for text
+          color_bg: '#0D1117'    # Very dark background color (GitHub Dark Default)
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake.gif
