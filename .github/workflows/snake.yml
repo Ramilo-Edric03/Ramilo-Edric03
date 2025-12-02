@@ -17,20 +17,16 @@ jobs:
       - uses: Platane/snk@v3
         with:
           github_user_name: Ramilo-Edric03
-          # Passing colors via 'args' which is compatible with the action
-          args: |
-            --palette-snake="#58A6FF" 
-            --palette-dots="#21262D" 
-            --palette-text="#C9D1D9"
-            --palette-bg="#0D1117"
+          palette: github-dark
+          
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake.gif
-            
+              dist/github-snake.svg
+              dist/github-snake-dark.svg?palette=github-dark
+                
       # Step 3: Push the changes (Fix 2: Using 'new_branch' for output branch)
       - uses: EndBug/add-and-commit@v9
         with:
           # 'new_branch' is the correct parameter for pushing to a specific branch
           new_branch: output
           message: 'Generate GitHub snake contribution graph'
-          add: 'dist/github-contribution-grid-snake.svg'
+          add: 'dist/github-snake.svg'
